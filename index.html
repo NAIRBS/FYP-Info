@@ -1,1 +1,458 @@
-<h1>Hello, world\!:</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTU FYP Resources</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: #0e0e10;
+      color: #e3e3e3;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #1f1f23;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
+
+    header a.github-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-block;
+    transition: transform 0.2s, fill 0.2s;
+    }
+
+    header a.github-icon svg {
+        fill: #e3e3e3;
+    }
+
+    header a.github-icon:hover svg {
+        fill: #00b7ff;
+        transform: scale(1.1);
+    }
+
+    h1 {
+      color: #fff;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #151515;
+      border-bottom: 1px solid #333;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #ccc;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.2s, border-bottom 0.3s;
+    }
+
+    nav button.active {
+      color: #00b7ff;
+      border-bottom: 2px solid #00b7ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h2 {
+      color: #00b7ff;
+      border-bottom: 2px solid #00b7ff;
+      padding-bottom: 0.5rem;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .links a {
+      color: #00b7ff;
+      text-decoration: none;
+      margin-right: 8px;
+      background: #1f1f23;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .links a:hover {
+      background: #00b7ff;
+      color: #fff;
+    }
+
+    iframe {
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>NTU CCDS Undergraduate FYP Resource Hub</h1>
+    <a href="https://aseschng.github.io/UndergraduateStudents.html" style="color: #00b7ff;">Original Guide by Professor Chng Eng Siong</a>
+
+    <a href="https://github.com/NAIRBS/FYP-Info" target="_blank" class="github-icon">
+    <svg height="64" width="64" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38
+        0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+        -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+        -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21
+        2.2.82a7.54 7.54 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82
+        2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+        0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    </a>
+  </header>
+
+  <nav>
+    <button class="active" onclick="showTab('presentation')">Presentation Info</button>
+    <button onclick="showTab('report')">Report Guide</button>
+    <button onclick="showTab('examples')">Past Examples</button>
+    <button onclick="showTab('graduate')">Graduate Writing</button>
+    <button onclick="showTab('latex')">Using Latex locally</button>
+  </nav>
+
+  <main>
+    <!-- Tab 1 -->
+    <section id="presentation" class="active">
+      <h2>FYP Presentation Guidelines</h2>
+      <p>Your FYP presentation should last 20–23 minutes, followed by 5 minutes of Q&A.</p>
+      <p>Objective: Help examiners appreciate your project — its motivation, challenges, and outcomes.</p>
+
+      <ol>
+        <li>Present an overview of the problem – describe the issue, motivation, and challenges.</li>
+        <li>Discuss existing approaches (literature review).</li>
+        <li>Explain your solution – novelty, creativity, and technical depth.</li>
+        <li>Show results (demo, screenshots, experiments, etc.).</li>
+        <li>End with conclusions and potential future work.</li>
+      </ol>
+
+      <p><strong>Tips:</strong></p>
+      <ol>
+        <li><strong>Make sure slide 1 has your name, project title, and year. Number all slides.</strong></li>
+        <li>Record your own presentation as rehearsal. Review it critically to improve clarity and timing.</li>
+      </ol>
+      
+    </section>
+
+    <!-- Tab 2 -->
+    <section id="report">
+      <h2>FYP Report Guide</h2>
+      <p>Suggested to write your report using <strong>Overleaf LaTeX</strong>.</p> 
+      <p><strong>Website author interjection: DON'T USE OVERLEAF, instead, use <a href="https://crixet.com/ " target="_blank" style="color: #00b7ff;">crixet.com</a>, Overleaf now has a 10 second compile limit, and if you are writing anything past 50 pages, this is not enough. Crixet does all the same things as crixet, has DARK MODE and no compile time limit...</strong></p>
+      <p><strong>Website author recommendation: I've made my own latex template on overleaf: <a href="https://www.overleaf.com/read/xdmdvrxjxvdr#77cee0 " target="_blank" style="color: #00b7ff;">CCDS Latex FYP Template</a>,  alternatively you can download it in this website's repo if my account expires (it uses school email), <a href="https://github.com/NAIRBS/FYP-Info " target="_blank" style="color: #00b7ff;">Website Repo</a></strong></p>
+      The goal is to demonstrate that you:</p>
+      <ol>
+        <li>Understand the project scope and show what you have achieved.</li>
+        <li>Can clearly describe the methods, steps, and technologies used.</li>
+        <li>Show familiarity with related work (literature review).</li>
+        <li>Implemented working baselines or prototypes.</li>
+        <li>Have ideas for future improvement.</li>
+      </ol>
+      <p><strong>Length:</strong> Final report should be 40–65 pages.  
+      The interim report should be a 50% version of the final one.</p>
+    </section>
+
+   <!-- Tab 3 -->
+<section id="examples">
+  <h2>Past FYP Examples</h2>
+  <p>Explore previous projects with their presentation videos, reports, and slides.</p>
+
+  <ol>
+    <li>
+      <strong>2023 Dec – Tjandy Putra</strong>: Deploying ASR System with Kubernetes</p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=b1FHizHcrko" target="_blank">Video</a>
+        <a href="https://www.dropbox.com/scl/fi/eydmqhpuv4uhmz7o47czg/2023_SCSE22-0652_FYP_Tjandy_Report.pdf?rlkey=9psx2mu9ozq55z7d9sqili2ku" target="_blank">Report</a>
+        <a href="https://www.dropbox.com/scl/fi/2065jqymccauatf679pb5/2023_SCSE22-0652_FYP_Tjandy_Slides.pdf?rlkey=5tx9kkb4oglm3wrfg03ibxhqg" target="_blank">Slides</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/b1FHizHcrko" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>2023 May – Christopher Yong</strong>: Web-Based Speech Recognition Platform</p>
+      <div class="links">
+        <a href="https://www.dropbox.com/s/c50s6w6lqa4959w/ChrisYong_May2023_FYP_Presentation_Recording.mp4?dl=0" target="_blank">Video</a>
+        <a href="https://www.dropbox.com/s/7g47ekscgeejd2q/ChrisYong_May2023_Ammended_FYP_Report.pdf?dl=0" target="_blank">Report</a>
+        <a href="https://www.dropbox.com/s/7ecanlwk61cdrl3/ChrisYong_May2023_FYP_Presentation_Slides.pptx?dl=0" target="_blank">Slides</a>
+      </div>
+    </li>
+
+    <li>
+      <strong>2023 May – Song Yu</strong>: Speech Recognition System via Kubernetes Cluster Infrastructure</p>
+      <div class="links">
+        <a href="https://www.dropbox.com/s/ujqbsaqbr9onx8x/2023_May_SongYu_FYP%20Presentation.mp4?dl=0" target="_blank">Video</a>
+        <a href="https://www.dropbox.com/s/hs3nx2mxpg6mrlv/2023_May_SongYu_Deploying%20Speech%20Recognition%20System%20using%20Kubernetes%20Cluster%20-%20Oral%20Presentation.pdf?dl=0" target="_blank">Slides</a>
+      </div>
+    </li>
+
+    <li>
+      <strong>2022 Dec – Poh Kai Kiat</strong>: GitOps in Kubernetes</p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=qnsKsQJCX5c" target="_blank">YouTube</a>
+        <a href="https://drive.google.com/file/d/1VhOjXdNNt4wviwpFJ8MMoaAUKvnKMhQw/view?usp=sharing" target="_blank">Report</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/qnsKsQJCX5c" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>2022 May – Joshua Lee</strong>: Security in Cloud ASR Deployment</p>
+      <div class="links">
+        <a href="https://youtu.be/-_e2W5Ycmjw" target="_blank">YouTube</a>
+        <a href="https://www.dropbox.com/s/mlfz9kychhl67x1/THz_FYP_Slides_May2022.pdf?dl=0" target="_blank">Slides</a>
+        <a href="https://www.dropbox.com/s/c2kp0v2su6x1rpd/JoshuaLee_FYPReport_May2022.pdf?dl=0" target="_blank">Report</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/-_e2W5Ycmjw" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>2021 Dec – Lee Yan Zhen</strong>: Sound Event Detection</p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=UgVBKFla6kk" target="_blank">YouTube</a>
+        <a href="https://www.dropbox.com/s/4e4lr4vlt22132o/2021_LeeYanZhen_FYP%20Presentation.pptx?dl=0" target="_blank">Slides</a>
+        <a href="https://www.dropbox.com/s/8w332x0cfljh2ph/2021_Lee_Yan_Zhen_FYP.pdf?dl=0" target="_blank">Report</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/UgVBKFla6kk" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>2020 Dec – Darren Toh</strong>: Multipurpose Microphone Array System</p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=qsLfv2EkV3o" target="_blank">YouTube</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/qsLfv2EkV3o" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>2020 May – Wong Seng Wee</strong>: Deploying Speech Recognition System on Kubernetes</p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=le79VEOjeuQ" target="_blank">YouTube</a>
+      </div>
+      <iframe src="https://www.youtube.com/embed/le79VEOjeuQ" allowfullscreen></iframe>
+    </li>
+
+    <li>
+      <strong>Example reports & references</strong>:</p>
+      <div class="links">
+        <a href="https://www.dropbox.com/s/x90l4y8ux8lmn0z/ExamplesOfFYPReports.zip?dl=0" target="_blank">Report Zip</a>
+        <a href="https://dr.ntu.edu.sg/handle/10356/148069" target="_blank">148069</a>
+        <a href="https://dr.ntu.edu.sg/handle/10356/153133" target="_blank">153133</a>
+        <a href="https://dr.ntu.edu.sg/handle/10356/148042" target="_blank">148042</a>
+        <a href="https://dr.ntu.edu.sg/handle/10356/148427" target="_blank">148427</a>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- Tab 4 -->
+    <section id="graduate">
+    <h2>Writing and Presenting for Graduate Students </p>(and undergraduate students apparently)</h2>
+    
+    <p>Professor Chng Eng Siong's take on how you can organize your thesis, as well as presentation slides for your PhD defence (Qualifying Examination (QE) is the same).</p>
+
+    <p>
+        Tips about writing thesis:  
+        <a href="https://www.dropbox.com/s/g0aqsbrbiqw8qro/Thesis_Writing.docx?dl=0" target="_blank" style="color: #00b7ff;">Word Document</a> and   
+        <a href="https://www.dropbox.com/s/h900tomkmb292mg/Thesis_Writing_MindMapv1.pdf?dl=0" target="_blank" style="color: #00b7ff;">Mind Map</a>
+    </p>
+
+    <p>
+        I consider structure to be the most important consideration. 
+        </p> To have structure, first write a series of questions to drive the report (revise it many times), and with the finalized questions, generate a PowerPoint file to provide more content toward answering the questions. 
+        </p> Repeat until satisfied, and then write the report.
+    </p>
+
+    <p>
+        See Chong's example below as well as PhD ProofReader's template:
+        <a href="https://www.thephdproofreaders.com/structuring-a-thesis/how-to-use-your-phd-writing-template/" target="_blank" style="color: #00b7ff;">Writing Template</a>
+    </p>
+
+    <p>
+        Use ChatGPT to help improve your writing. See:
+        <a href="https://github.com/ahmetbersoz/chatgpt-prompts-for-academic-writing" target="_blank" style="color: #00b7ff;">ChatGPT Prompts</a> and 
+        <a href="https://youtu.be/w-GiUY-DcJY" target="_blank" style="color: #00b7ff;">Epic ChatGPT Prompts (YouTube)</a>
+    </p>
+
+    <!-- Embedded YouTube video: Epic ChatGPT Prompts -->
+    <div style="margin: 20px 0;">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/w-GiUY-DcJY" 
+        title="Epic ChatGPT Prompts" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        </iframe>
+    </div>
+
+    <p>Examples of QE and PhD preparation below:</p>
+
+    <ol>
+        <li>
+        <a href="https://www.linkedin.com/in/tze-yuang-chong-4b9b2a61/" target="_blank" style="color: #00b7ff;">Chong Tze Yuang</a> (2018): 
+        <a href="https://www.dropbox.com/s/sa03lfvjqywes2g/chong_Questions.pdf?dl=0" target="_blank" style="color: #00b7ff;">List of Questions</a>, 
+        <a href="https://www.dropbox.com/s/xns7rqz6sycfp5y/chong_ThesisOutlineSlides.pptx?dl=0" target="_blank" style="color: #00b7ff;">Thesis Outline Slides</a>, 
+        <a href="https://www.dropbox.com/s/9ur3bon1whthsk8/2018_June_ChongTzeYuangPhDThesis.pdf?dl=0" target="_blank" style="color: #00b7ff;">Thesis</a>, 
+        <a href="https://www.dropbox.com/s/m8y59n6nv0kqjdu/2018_June_ChongTzeYuang_Presentation.pptx?dl=0" target="_blank" style="color: #00b7ff;">Presentation Slides</a>.
+        </li>
+
+        <li>
+        <a href="https://www.linkedin.com/in/khassanov/" target="_blank" style="color: #00b7ff;">Khassan Yerbolat</a>’s QE and PhD:
+        <ul>
+            <li>
+            QE: 
+            <a href="https://www.dropbox.com/s/bjmetxhv8bgvfcl/Khassan_Ex_ch1_Jan2017_Analysis.txt?dl=0" target="_blank" style="color: #00b7ff;">List of Questions</a>,
+            <a href="https://www.dropbox.com/s/73o1jjc4288zq1i/Khassan_Ex_ch1_Jan2017.pdf?dl=0" target="_blank" style="color: #00b7ff;">Initial Draft QE</a>
+            </li>
+            <li>
+            PhD: 
+            <a href="https://www.dropbox.com/s/nc6hijq2l6q18ip/Khassan_FinalAmended_Thesis_May2020.pdf?dl=0" target="_blank" style="color: #00b7ff;">Thesis</a>, 
+            <a href="https://www.dropbox.com/s/6cq9v5syu0plqr9/Khassan_ReplyExaminer3.pdf?dl=0" target="_blank" style="color: #00b7ff;">Examiner Reply</a>, 
+            <a href="https://www.dropbox.com/s/qae9jr1r1lwldha/Khassan_PhD_Slides_Questions.pptx?dl=0" target="_blank" style="color: #00b7ff;">Slide Questions</a>, 
+            <a href="https://www.dropbox.com/s/7ynga8owf7a6u76/Khassan_PhD_SlidesApril2020.pptx?dl=0" target="_blank" style="color: #00b7ff;">Slides</a>, 
+            <a href="https://www.youtube.com/watch?v=1Dm16krGgv0" target="_blank" style="color: #00b7ff;">Online Presentation</a>.
+            </li>
+        </ul>
+        </li>
+
+        <!-- Embedded YouTube video: Khassan Yerbolat Presentation -->
+        <div style="margin: 20px 0;">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/1Dm16krGgv0" 
+            title="Khassan Yerbolat Online Presentation" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        </div>
+
+        <li>
+        <a href="https://www.linkedin.com/in/yingzhuzhaophd/" target="_blank" style="color: #00b7ff;">Zhao Yingzhu</a> (2020): 
+        <a href="https://www.dropbox.com/s/fsq3u54k78g8bsi/Yingzhu_Preparation_QE_slides.docx?dl=0" target="_blank" style="color: #00b7ff;">Preparation Suggestions</a>, 
+        <a href="https://www.dropbox.com/s/wuun6tzmapronyw/Yingzhu_QE.pptx?dl=0" target="_blank" style="color: #00b7ff;">QE Slides</a>, 
+        <a href="https://youtu.be/iddullfEaCo" target="_blank" style="color: #00b7ff;">YouTube Presentation (privated so inaccessible)</a>, 
+        <a href="https://www.dropbox.com/s/blucrqzkq46mjka/Yingzhu_main_QE_report_June2020.pdf?dl=0" target="_blank" style="color: #00b7ff;">Thesis</a>.
+        </li>
+        <li>
+        Andrew Koh Jin Jie: 
+        <a href="https://github.com/dhecloud/SCSE_QE_Presentation" target="_blank" style="color: #00b7ff;">GitHub for QE Preparation</a> (May 2021). 
+        <strong>Ignore if undergraduate</strong>
+        </li>
+    </ol>
+    </section>
+
+    <section id="latex">
+        <h2>Setting Up LaTeX Locally on Windows</h2>
+        <p>This guide walks you through installing LaTeX on Windows with all necessary tools for compiling documents, along with VSCode integration, specifically for Windows systems.</p>
+        <p>You should seriously evaluate if you even need latex locally, since Crixet and Overleaf already exist. Unless you really hate these online latex platforms, or have a lot of trouble using them, should you then resort to this. Alternatively, you can also install these if you just want to be able to produce the pdf locally or if these two services shutdown overnight as a backup...</p>
+
+        <h3>1. Install a LaTeX Distribution</h3>
+        <p>You have two main options for installing LaTeX on Windows:</p>
+
+        <h4>Option A: TeX Live (Full Installation)</h4>
+        <ul>
+            <li><strong>Pros:</strong> Includes <em>all</em> LaTeX packages.</li>
+            <li><strong>Cons:</strong> Large download (~10 GB) and long installation time.</li>
+            <li><strong>Download:</strong> <a href="https://www.tug.org/texlive/windows.html" target="_blank" style="color: #00b7ff;">TeX Live for Windows</a></li>
+            <li><strong>Instructions:</strong> Download and run the executable installer.</li>
+        </ul>
+
+        <h4>Option B: MiKTeX (Strongly Recommended)</h4>
+        <ul>
+            <li><strong>Pros:</strong> Smaller download, automatically installs packages as needed.</li>
+            <li><strong>Cons:</strong> May require internet access for new packages.</li>
+            <li><strong>Download:</strong> <a href="https://miktex.org/download" target="_blank" style="color: #00b7ff;">MiKTeX</a></li>
+            <li><strong>Instructions:</strong> Download and install. It will fetch packages on demand.</li>
+        </ul>
+
+        <h3>2. Install Perl</h3>
+        <p>Some LaTeX tools require Perl to run.</p>
+        <ul>
+            <li><strong>Download Strawberry Perl:</strong> <a href="https://strawberryperl.com/" target="_blank" style="color: #00b7ff;">Strawberry Perl MSI Installer</a></li>
+            <li>Install using the MSI package.</li>
+        </ul>
+
+        <h3>3. Install VSCode & LaTeX Workshop Extension</h3>
+        <ol>
+            <li>Download and install <a href="https://code.visualstudio.com/" target="_blank" style="color: #00b7ff;">Visual Studio Code</a>.</li>
+            <li>Open VSCode, go to the <strong>Extensions</strong> view (Ctrl+Shift+X).</li>
+            <li>Search for <strong>LaTeX Workshop</strong> or <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop" target="_blank" style="color: #00b7ff;">download directly</a>.</li>
+            <li>Install the extension.</li>
+        </ol>
+
+        <h3>4. Verify Setup</h3>
+        <p>Create a <code>.tex</code> file in VSCode and add a minimal LaTeX document:</p>
+        <pre style="background:#1f1f23; padding:10px; border-radius:6px; overflow:auto;">
+        \documentclass{article}
+        \begin{document}
+        Hello, LaTeX!
+        \end{document}
+        </pre>
+        <p>Use the <strong>TeX icon</strong> in VSCode sidebar or press <code>Ctrl+Alt+B</code> to build the PDF or <code>Ctrl+Alt+V</code> to preview the document. Check the generated PDF.</p>
+
+        <h3>Notes</h3>
+        <ul>
+            <li>TeX Live is better if you want everything offline.</li>
+            <li>MiKTeX is better if you want to save space and only download what you need.</li>
+            <li>Keep Perl installed for packages that require it.</li>
+        </ul>
+    </section>
+
+  </main>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
